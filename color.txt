@@ -1,0 +1,127 @@
+ colorful dots
+
+
+
+
+Html
+
+
+
+ <span class="colorfulDot dot1"></span>
+    <span class="colorfulDot dot2"></span>
+    <span class="colorfulDot dot3"></span>
+    <span class="colorfulDot dot4"></span>
+    <span class="colorfulDot dot5"></span>
+    <span class="colorfulDot dot6"></span>
+
+
+
+css  
+
+.colorfulDot {
+        display: block;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        border-radius: 50%;
+
+        &.dot1{
+            left: 0;
+            top: 0;
+            background-color: $primaryColor;
+        }
+
+        &.dot2 {
+            right: 0;
+            top: 0;
+           
+            background-color: gray;
+        }
+
+        &.dot3 {
+            left: 0;
+            bottom: 0;
+            background-color: green;
+        }
+
+        &.dot4 {
+           
+            bottom: 0;
+            right: 0;
+            background-color: rebeccapurple;
+        }
+
+        &.dot5 {
+            left: 0;
+            bottom: 0;
+            background-color: #0493ec;
+        }
+
+        &.dot6 {
+            top: 0;
+            right: 0;
+            background-color: blue;
+        }
+
+    }
+
+
+
+Js
+
+
+  i = 0;
+    j = 0;
+    k=0;
+    setInterval(function () {
+        i += 1;
+
+        $(".dot5").css("left", i + 500 + "px");
+        $(".dot5").css("bottom", i + "px");
+
+        $(".dot6").css("right", i + 700 + "px");
+        $(".dot6").css("top", i + "px");
+        if (i >= 690) {
+            i = 0;
+        }
+
+    }, 20);
+
+
+    setTimeout(function () {
+        setInterval(function () {
+            j += 1;
+            $(".dot1").css("left", j+ 50 + "px");
+            $(".dot1").css("top", j+ "px");
+
+            $(".dot3").css("left", j + 300+ "px");
+            $(".dot3").css("bottom", j + "px");
+
+
+            if (j >= 690) {
+                j = 0;
+            }
+
+        }, 20);
+
+    }, 1000);
+
+
+
+    setTimeout(function () {
+        setInterval(function () {
+            k += 1;
+            $(".dot2").css("right", k + 50 + "px");
+            $(".dot2").css("top", k + "px");
+
+            $(".dot4").css("right", k +200+ "px");
+            $(".dot4").css("bottom", k + "px");
+
+
+            if (k >= 690) {
+                k = 0;
+            }
+
+        }, 20);
+
+    }, 2000);
